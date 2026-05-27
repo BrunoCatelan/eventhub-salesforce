@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Inscritos__c</fullName>
+    <description>Campo de resumo que conta automaticamente o total de inscrições vinculadas a este evento.</description>
+    <label>Total de Inscritos</label>
+    <summaryForeignKey>Inscricao__c.Evento__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

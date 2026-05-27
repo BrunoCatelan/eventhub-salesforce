@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Inicio_No_Passado</fullName>
+    <active>true</active>
+    <description>Impede a criação ou edição de eventos com data de início no passado.</description>
+    <errorConditionFormula>Data_Hora_Inicio__c &lt; NOW()</errorConditionFormula>
+    <errorMessage>Não é possível agendar um evento para uma data e hora que já passaram.</errorMessage>
+</ValidationRule>

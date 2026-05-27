@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Status das Vagas" icon-name="standard:event">
+        <div class="slds-p-around_medium">
+            <template lwc:if={error}>
+                <p class="slds-text-color_error">Erro ao carregar dados do evento.</p>
+            </template>
+
+            <template lwc:else>
+                <div class="status-container">
+                    <template lwc:if={isFull}>
+                        <div class="badge badge-error">
+                            <lightning-icon icon-name="utility:error" variant="inverse" size="small" class="slds-m-right_x-small"></lightning-icon>
+                            <span>EVENTO LOTADO</span>
+                        </div>
+                    </template>
+                    <template lwc:else>
+                        <div class="badge badge-success">
+                            <lightning-icon icon-name="utility:check" variant="inverse" size="small" class="slds-m-right_x-small"></lightning-icon>
+                            <span>VAGAS DISPONÍVEIS</span>
+                        </div>
+                    </template>
+                    
+                    <p class="slds-m-top_small">
+                        Inscritos: <strong>{totalInscritos}</strong> / Limite: <strong>{vagasMaximas}</strong>
+                    </p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

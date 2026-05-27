@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evento__c</fullName>
+    <description>Relacionamento mestre-detalhe que conecta a inscrição ao seu respectivo evento.</description>
+    <label>Evento</label>
+    <relationshipLabel>Inscrições</relationshipLabel>
+    <relationshipName>Inscricoes</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <referenceTo>Evento__c</referenceTo>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>
