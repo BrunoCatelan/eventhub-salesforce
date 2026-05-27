@@ -118,4 +118,4 @@ force-app/main/default/
 
 ---
 
-_Desenvolvido por **Bruno Catelancel**. Projeto construído com fins de estudo e portfólio para a stack de engenharia Salesforce._
+_Desenvolvido por **Bruno Catelan**. Projeto construído com fins de estudo e portfólio para a stack de engenharia Salesforce._
