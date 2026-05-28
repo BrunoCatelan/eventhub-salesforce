@@ -1,3 +1,18 @@
+# Meu Portfólio de Desenvolvimento Salesforce 🚀
+
+Bem-vindo ao meu repositório de soluções e projetos desenvolvidos na plataforma Salesforce utilizando Apex, Triggers e boas práticas de arquitetura.
+
+## 📁 Projetos Contidos Neste Repositório
+
+### 1. [EventHub 📅](./README.md) * *Descrição breve do EventHub aqui.*
+
+### 2. [LeadGenius 🎯](./LeadGenius/README.md)
+* Solução inteligente de distribuição de Leads por fila (Round-Robin) utilizando Apex Triggers e Design Pattern Handler.
+* [Acessar documentação completa do LeadGenius](./LeadGenius/README.md)
+
+
+
+
 # EventHub — Salesforce MVP 🚀
 
 

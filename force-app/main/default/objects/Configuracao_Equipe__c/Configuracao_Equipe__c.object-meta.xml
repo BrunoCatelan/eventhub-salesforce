@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <label>Configuração Equipe</label>
+    <pluralLabel>Configurações Equipe</pluralLabel>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    
+    <!-- A correção está neste bloco abaixo: configurando o campo padrão Name -->
+    <nameField>
+        <label>Número de Configuração</label>
+        <type>AutoNumber</type>
+        <displayFormat>CONF-{0000}</displayFormat>
+        <startingNumber>1</startingNumber>
+    </nameField>
+</CustomObject>
