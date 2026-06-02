@@ -1,6 +1,6 @@
 # Meu Portfólio de Desenvolvimento Salesforce 🚀
 
-Bem-vindo ao meu repositório de soluções e engenharia na plataforma Salesforce. Este espaço reúne projetos práticos focados em arquitetura robusta, automações performáticas (Apex/Triggers) e interfaces modernas (LWC), seguindo as melhores práticas do mercado.
+Bem-vindo ao meu repositório de soluções e engenharia na plataforma Salesforce. Este espaço reúne projetos práticos focados em arquitetura robusta, automações performáticas (Apex/Triggers), integrações modernas e interfaces reativas (LWC), seguindo as melhores práticas do mercado.
 
 ---
 
@@ -8,6 +8,7 @@ Bem-vindo ao meu repositório de soluções e engenharia na plataforma Salesforc
 
 ### 1. [EventHub — Gerenciador Corporativo de Eventos 📅](#-projeto-1-eventhub-salesforce-mvp-)
 * Sistema de gerenciamento de eventos com controle dinâmico de lotação em tempo real. Mescla automações declarativas com validações programáticas (Triggers) bulkificadas e interface reativa em LWC.
+* ✨ **Módulo Adicional:** [FinTrack — Integração Financeira Internacional](./FinTrack/)
 
 ### 2. [LeadGenius — Distribuidor Inteligente de Leads 🎯](./LeadGenius/)
 * Solução de distribuição de leads por fila (Round-Robin) utilizando Apex Triggers e o padrão de arquitetura *Trigger Handler Pattern*. Garantia de distribuição justa e uniforme para equipes de vendas.
@@ -30,6 +31,7 @@ O projeto destaca-se por mesclar de forma equilibrada as melhores práticas de d
 | **Lógica Back-End** | Gatilho Apex (`before insert`) | Validação síncrona para barrar inscrições quando o limite de vagas for atingido, aplicando padrões de **Bulkificação**. |
 | **Garantia de Qualidade** | Classes de Teste Apex | Validação de cenários positivos e negativos, atingindo 100% de cobertura de código (*Code Coverage*). |
 | **Camada Front-End** | Lightning Web Components (LWC) | Interface reativa moderna com feedback visual imediato para o usuário final sobre o status das vagas. |
+| **Extensão Financeira** | Record-Triggered Flow & Invocable Apex | Módulo **FinTrack**: Processamento assíncrono para conversão de moedas estrangeiras. |
 
 ### 🧠 Detalhes do Código e Implementação
 
@@ -46,12 +48,18 @@ O componente de frontend utiliza o decorador `@wire` e o serviço de dados nativ
 * 🟢 **VAGAS DISPONÍVEIS:** Quando o evento possui margem para novos participantes.
 * 🔴 **EVENTO LOTADO:** Quando o limite do Roll-up atinge o teto estipulado.
 
+#### 4. 🔥 Módulo FinTrack (Extensão de Moedas)
+Para habilitar o suporte a eventos internacionais no EventHub, foi implementado o módulo **FinTrack**, que intercepta registros criados com moedas estrangeiras e injeta as cotações via Apex de maneira assíncrona, protegendo os limites de execução da Org.
+* 👉 [Acessar documentação completa do FinTrack](./FinTrack/)
+
 ### 📁 Estrutura do Repositório (SFDX)
 
     force-app/main/default/
     ├── classes/
     │   ├── InscricaoTriggerTest.cls
-    │   └── InscricaoTriggerTest.cls-meta.xml
+    │   ├── InscricaoTriggerTest.cls-meta.xml
+    │   ├── FinTrackService.cls
+    │   └── FinTrackService.cls-meta.xml
     ├── lwc/
     │   └── eventStatus/
     │       ├── eventStatus.html
@@ -61,7 +69,9 @@ O componente de frontend utiliza o decorador `@wire` e o serviço de dados nativ
     ├── objects/
     │   └── Evento__c/
     │       └── fields/
-    │           └── Total_Inscritos__c.field-meta.xml
+    │           ├── Total_Inscritos__c.field-meta.xml
+    │           ├── Moeda__c.field-meta.xml
+    │           └── Cotacao_Aplicada__c.field-meta.xml
     └── triggers/
         ├── InscricaoTrigger.trigger
         └── InscricaoTrigger.trigger-meta.xml
